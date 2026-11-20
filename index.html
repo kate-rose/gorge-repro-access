@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Abortion Is Too Hard to Find From the Gorge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Same kit as the Skamania at the Bone briefing: one reading column, charts and card grids widen to 940px. */
+:root{
+  --bg:#EEF1EC; --panel:#DDE4DD; --ink:#132A31; --muted:#4E6268;
+  --lead:#C46A12; --bar:#6F8F86; --bar2:#3E615A; --track:#C9D3CC; --rule:#B9C6BE;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#122A33; --panel:#1B3843; --ink:#EAF0EE; --muted:#9DB3B3;
+    --lead:#F2B14C; --bar:#6E978C; --bar2:#A9C9BF; --track:#244652; --rule:#2E5260; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#122A33; --panel:#1B3843; --ink:#EAF0EE; --muted:#9DB3B3;
+  --lead:#F2B14C; --bar:#6E978C; --bar2:#A9C9BF; --track:#244652; --rule:#2E5260; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:940px;margin:0 auto}
+.col{max-width:680px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;text-wrap:balance;margin:0}
+h1{font-size:clamp(48px,9vw,96px);letter-spacing:-.5px}
+h2{font-size:clamp(36px,6vw,56px);margin-top:8px}
+h3{font-size:28px;font-weight:700;line-height:1.05}
+p{margin:0}
+.stack>*+*{margin-top:16px}
+a{color:inherit;text-decoration-color:var(--lead);text-underline-offset:3px}
+.num{font-variant-numeric:tabular-nums}
+.mast{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;border-bottom:1px solid var(--rule);padding-block:20px 12px;font-size:15px;color:var(--muted)}
+.mast b{color:var(--ink);font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 56px;padding-block:40px 32px;align-items:end}
+.hero>div{container-type:inline-size}
+.hero .for{font-size:20px;color:var(--muted);margin-top:16px;max-width:34ch}
+.stat{font-family:var(--display);font-weight:700;font-size:min(200px,26cqi);line-height:.85;color:var(--lead);font-variant-numeric:tabular-nums}
+.stat-cap{font-size:20px;margin-top:12px;max-width:40ch}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
+.minute{background:var(--panel);padding:24px 28px;margin-block:8px 0}
+.minute h3{margin-bottom:12px}
+.minute ol{margin:0;padding-left:22px}
+.minute li+li{margin-top:10px}
+section{padding-top:64px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:18px;color:var(--muted);letter-spacing:.6px}
+.lede{font-size:20px;margin-top:16px}
+figure{margin:32px 0 0}
+figure .fig-title{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05}
+figure .fig-sub{color:var(--muted);font-size:16px;margin-top:4px;max-width:68ch}
+.chart{margin-top:12px;width:100%;min-height:120px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+figcaption{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:10px;max-width:80ch}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--display);font-weight:600;font-size:16px;margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:2px;display:inline-block}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
+@media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
+.ax{font-family:var(--display);font-size:14px;fill:var(--muted)}
+.lab{font-family:var(--display);font-size:15px;font-weight:600;fill:var(--ink)}
+.lab-lead{font-family:var(--display);font-size:16px;font-weight:700;fill:var(--lead)}
+.cell-lab{font-family:var(--display);font-size:13px;font-weight:700;fill:var(--bg)}
+.grid{stroke:var(--rule);stroke-width:1}
+.bite{border-top:3px solid var(--ink);padding-top:14px;margin-top:40px;max-width:760px}
+.bite q{display:block;font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,30px);line-height:1.05;quotes:"\201C" "\201D"}
+.bite .who{font-size:16px;color:var(--muted);margin-top:10px}
+.bites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.bites-grid .bite{margin-top:32px}
+@media (max-width:760px){.bites-grid{grid-template-columns:minmax(0,1fr)}}
+.fair{border:1px solid var(--rule);padding:22px 26px;margin-top:32px}
+.fair p+p{margin-top:10px}
+.fixes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px;counter-reset:fix}
+@media (max-width:760px){.fixes{grid-template-columns:minmax(0,1fr)}}
+.fix{background:var(--panel);padding:20px 22px;min-width:0;position:relative}
+.fix h3{font-size:24px;margin-bottom:8px;padding-left:44px}
+.fix h3::before{counter-increment:fix;content:counter(fix);position:absolute;left:22px;top:18px;font-family:var(--display);font-weight:800;font-size:30px;color:var(--lead);line-height:1}
+.fix p{font-size:16px}
+.harms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
+@media (max-width:760px){.harms{grid-template-columns:minmax(0,1fr)}}
+.harm{border-top:3px solid var(--lead);padding-top:12px;min-width:0}
+.harm h3{font-size:24px;margin-bottom:6px}
+.harm p{font-size:16px}
+.tbl{overflow-x:auto;margin-top:24px}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th{font-family:var(--display);font-weight:700;font-size:16px;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:8px 10px 6px 0}
+td{border-bottom:1px solid var(--rule);padding:10px 10px 10px 0;vertical-align:top}
+td:first-child{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.1;width:26%}
+.when{font-family:var(--display);font-weight:700;font-size:19px;white-space:nowrap}
+@media (max-width:620px){thead{display:none}tbody tr{display:block;border-bottom:1px solid var(--rule);padding:12px 0}tbody td{display:block;border:0;padding:2px 0;width:auto}td:first-child{width:auto}.when{display:inline-block;color:var(--lead);margin-bottom:4px}}
+.method{font-size:15px;color:var(--muted);border-top:1px solid var(--rule);margin-top:64px;padding-top:16px}
+.method p+p{margin-top:8px}
+@media (prefers-reduced-motion:no-preference){.grow{transform-box:fill-box;transform-origin:left;animation:grow 1.1s ease-out both}@keyframes grow{from{transform:scaleX(.001)}}}
+.print-only{display:none}
+@page{size:letter;margin:0.55in 0.6in}
+@media print{
+  :root,:root[data-theme="dark"]{--bg:#FFFFFF;--panel:#EEF1EC;--ink:#132A31;--muted:#4E6268;--lead:#C46A12;--bar:#6F8F86;--bar2:#3E615A;--track:#DDE4DD;--rule:#B9C6BE;color-scheme:light}
+  body{font-size:11pt;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .grow{animation:none!important}
+  .hero{padding-block:16px 12px}
+  h1{font-size:44pt} h2{font-size:26pt} h3{font-size:15pt}
+  .stat{font-size:66pt}.stat-cap{font-size:12pt}
+  section{padding-top:28pt;break-inside:auto}
+  figure,.bite,.fix,.minute,.fair{break-inside:avoid}
+  a{text-decoration:none}
+  .screen-only{display:none}.print-only{display:inline}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mast"><span><b>Gorge Access</b> · a memo to Gorge providers and the people who fund them</span><span>November 2026 · searches run Oct. 28, 2026 · <a class="screen-only" href="Abortion-Is-Too-Hard-to-Find-From-the-Gorge_Gorge-Access-memo.pdf">PDF</a><span class="print-only">kate-rose.github.io/gorge-repro-access</span></span></div>
+
+  <div class="hero">
+    <div>
+      <h1>Abortion is too hard to find from the Gorge.</h1>
+      <p class="for">The clinics that refer stay silent in search. The centers against abortion say the word on every page. Fixing that is free, and the money for more is here.</p>
+    </div>
+    <div>
+      <div class="stat num">0</div>
+      <p class="stat-cap"><b>abortion providers</b> in Skamania, Klickitat, Hood River or Wasco county. None, on either side of the river. Even clinicians here are surprised by it.</p>
+    </div>
+  </div>
+
+  <div class="minute col" id="one-minute">
+    <h3>In one minute</h3>
+    <ol>
+      <li><b>There is no abortion provider in the Gorge.</b> The nearest in-person care is in Portland or Yakima, 60 to 150 minutes each way; the other route is telehealth, with pills by mail.</li>
+      <li><b>Finding that out is unacceptably hard,</b> because the only organizations that use the word "abortion" on their websites, in a way Google can index, are the ones against it. The clinics that test, counsel and refer do not say the word online. That is the clinics' choice, and theirs to fix.</li>
+      <li><b>The numbers:</b> in 36 town searches, an anti-abortion center was the first result in 10 and on page one in 22. A Gorge clinic appeared in 14, and none of those pages said what a pregnant person could get there.</li>
+      <li><b>The detour hurts.</b> A week lost can push a patient past the window for pills by mail and past the abortion fund's 48-hour notice; a miscarrying patient leaves with an ultrasound and no treatment; a patient who believes the page may skip emergency contraception. The people with the least slack pay the most.</li>
+      <li><b>The fix is a web page.</b> Say "all-options counseling and abortion referral," "free pregnancy test," and "early pregnancy appointment" in words a search can match, in English and Spanish, and correct the directory listings.</li>
+      <li><b>The money is here.</b> Washington's first-year rural health award ($181M) is spent, and Skyline Health is on the maternal-services list. Year two ($177M) is budgeted by the end of December. Oregon ($197M a year) already funded One Community Health and Providence Hood River.</li>
+    </ol>
+  </div>
+
+  <section id="search">
+    <p class="eyebrow">WHAT A RESIDENT FINDS</p>
+    <h2>Type "abortion" and your town. Here is who answers.</h2>
+    <p class="lede col">On October 28, 2026, we ran 42 Google searches a Gorge resident might type, in a clean browser with no account and no history. For six towns and six phrases, this grid shows what kind of site came up <em>first</em>. The anti-abortion centers rank because they built a page for every town, in English and Spanish, with the words people type.</p>
+
+    <figure id="fig-grid">
+      <div class="fig-title">The first result, by town and search</div>
+      <div class="fig-sub">Each cell is one search. The small number is how many anti-abortion center pages were on the first page.</div>
+      <div class="chart" id="chart-grid" data-h="330"></div>
+      <div class="ax" id="grid-key" style="font-family:var(--display);font-size:14px;color:var(--muted);margin-top:6px"></div>
+      <div class="legend"><span><i class="sw" style="background:var(--lead)"></i>Anti-abortion pregnancy center (A)</span><span><i class="sw" style="background:var(--bar2)"></i>Oregon or Washington abortion provider (P)</span><span><i class="sw" style="background:var(--bar)"></i>A Gorge clinic or Gorge Access (G)</span><span><i class="sw" style="background:var(--track);border:1px solid var(--rule)"></i>Directory, news, retail or unrelated (·)</span></div>
+      <figcaption>"Anti-abortion pregnancy center" means Hope Medical Clinic (Hood River, The Dalles), the Goldendale Pregnancy Resource Center, or a national anti-abortion network's directory page for one; all say on their own sites that they do not provide or refer for abortion. The bottom three towns return little from anywhere: Google reads "Stevenson," "Bingen" and "White Salmon" as a surname, a saint and a fish. Town-name searches do not depend on the searcher's location. Data: Gorge Access search audit, Oct. 28, 2026, 42 captures.</figcaption>
+    </figure>
+
+    <figure id="fig-counts">
+      <div class="fig-title">Of 36 town searches</div>
+      <div class="chart" id="chart-counts" data-h="290"></div>
+      <figcaption>"Gorge clinic page" counts any One Community Health, health department, hospital or family-medicine page on the first page. Not one of them mentioned pregnancy options, counseling or referral. Same 42-capture set; the six "near me" map-box searches are excluded here.</figcaption>
+    </figure>
+
+    <div class="fair">
+      <p><b>The directory gets it wrong by accident, too.</b> 211info's entries for One Community Health's Hood River clinic and its high-school clinic say the program "offers … abortions." The service tag on the same entries says "Abortion Referrals." A patient reads the description, not the tag.</p>
+      <p><b>And a rule we hold ourselves to:</b> a provider page that doesn't appear, or doesn't mention a service, is a visibility finding, not proof the service isn't offered. That is exactly the problem. Patients can't tell either.</p>
+    </div>
+  </section>
+
+  <section id="cost">
+    <p class="eyebrow">WHAT THE DETOUR COSTS</p>
+    <h2>A week, and sometimes the option itself.</h2>
+    <p class="lede col">The centers' pages ask a patient to book a consultation and get an ultrasound first. Their posted hours set the pace. A telehealth prescription, the option most Gorge residents would actually use, is a same-day intake and pills in one to three business days.</p>
+
+    <figure id="fig-time">
+      <div class="fig-title">Two paths from a Friday-afternoon search</div>
+      <div class="chart" id="chart-time" data-h="240"></div>
+      <figcaption>Hours from the centers' own sites (Hope: Tue–Thu; Goldendale: Tue–Wed, with ultrasound results by phone "after the radiologist reviews them"). The Northwest Abortion Access Fund says its advocates "follow up within 48 hours" and it "is not able to accommodate requests that come in 48 hours or less before an appointment," so the detour can also cost the funding. Pills by mail are an option to 10–11 weeks with most telehealth providers (70 days under the FDA label); past that, the trip to Portland or Yakima is in person.</figcaption>
+    </figure>
+
+    <div class="bites-grid">
+      <div class="bite"><q>While you can order abortion pills by mail, it is a risk to your health and safety.</q><p class="who">Hope Medical Clinic's abortion-pill page. The FDA's own program has not required an in-person visit since January 2023 and allows certified pharmacies to mail the medication. A study of 6,034 telehealth medication abortions found 99.8% free of any serious adverse event (Upadhyay et al., <i>Nature Medicine</i>, 2024).</p></div>
+      <div class="bite"><q>Reversal is possible if action is taken after the first dose.</q><p class="who">Hope's page, routing patients to Heartbeat International's "Abortion Pill Reversal" hotline. ACOG: such claims "are not based on science and do not meet clinical standards." The only controlled trial was stopped after three of twelve participants hemorrhaged (Creinin et al., 2020).</p></div>
+      <div class="bite"><q>I'm planning to take the abortion pill. Do I still need an ultrasound? Yes.</q><p class="who">Goldendale Pregnancy Resource Center. The American Academy of Family Physicians, summarizing ACOG's practice bulletin: "Routine use of ultrasonography before a first-trimester abortion is not necessary." The free ultrasound is the visit's hook; on Oct. 28, Hope's site said its medical services were paused.</p></div>
+      <div class="bite"><q>If the pregnancy is not viable (no heartbeat) … there is no reason to take the pill.</q><p class="who">Goldendale's page. A pregnancy with no heartbeat is an early pregnancy loss, and mifepristone with misoprostol is a standard treatment for it (Schreiber et al., <i>New England Journal of Medicine</i>, 2018). The advice sends a miscarrying patient away from care, from a center that cannot provide it.</p></div>
+    </div>
+  </section>
+
+  <section id="harm">
+    <p class="eyebrow">SO WHAT</p>
+    <h2>The search result is not the harm. What follows it is.</h2>
+    <div class="harms">
+      <article class="harm"><h3>The clock runs out on the easiest option</h3><p>Medication abortion by telehealth is available to about 10 or 11 weeks with most providers (70 days under the FDA label). A week lost to a consultation, an ultrasound and a callback can cross that line, and a same-day intake with pills by mail becomes an in-person procedure in Portland or Yakima: the drive, a day off, childcare, more money. Hope's page prices the pill at "$400-$800"; OHSU lists $467. For some patients the detour changes which options remain.</p></article>
+      <article class="harm"><h3>The funding window closes</h3><p>The Northwest Abortion Access Fund "is not able to accommodate requests that come in 48 hours or less before an appointment." A patient who finally books after the detour may book too late for help paying.</p></article>
+      <article class="harm"><h3>A miscarrying patient is sent away from treatment</h3><p>The centers offer an ultrasound but no care. Goldendale's page says that with no heartbeat "there is no reason to take the pill." Mifepristone with misoprostol is a standard treatment for early pregnancy loss. She leaves with a diagnosis, no treatment, and advice against the medication that is the treatment.</p></article>
+      <article class="harm"><h3>Emergency contraception gets skipped</h3><p>Hope's page says Plan B "may prevent the fertilized egg from implanting," which the FDA's 2022 label rejects, and that it may not work above 165 pounds, which the label does not say. Emergency contraception is time-limited, days not weeks. A patient who believes the page may not take it, or may not know the county clinics hand it out same-day.</p></article>
+      <article class="harm"><h3>The misinformation travels with her</h3><p>She has now read, on a page that calls itself "evidence-based," that pills by mail are a risk to her safety and that an abortion can be "reversed," a protocol whose only controlled trial was stopped after three of twelve women hemorrhaged. Some patients will act on what they read.</p></article>
+      <article class="harm"><h3>The people with the least slack pay the most</h3><p>Goldendale and Stevenson residents already make a 60-to-150-minute trip for any in-person care, and Washington residents face a bridge that will close during construction. The detour is added on top. For a teenager, a Spanish speaker routed to Bend, or someone without a car, it may be the end of the search.</p></article>
+    </div>
+    <div class="fair">
+      <p><b>It lands on you, too.</b> Patients arrive late, confused about what you offer, or not at all. When no clinic says in writing what it does, people pass around what they have heard, and some of what they have heard about your practice is wrong.</p>
+      <p>The profession's own rules point one way. The AMA tells even an objecting physician to "inform the patient about all relevant options" and refer; ACOG says referral "need not be conceptualized as a repudiation or compromise of one's values." A clinic with no objection that stays silent to avoid a hypothetical complaint is putting a hypothetical offended person ahead of a real patient who is pregnant now, has a time-limited decision, and is about to find an anti-abortion center instead. That is not caution. It is a choice about whose comfort matters, and it is not compassionate care.</p>
+    </div>
+  </section>
+
+  <section id="free">
+    <p class="eyebrow">THE FREE FIXES</p>
+    <h2>Say it on your website, so a search can find it.</h2>
+    <p class="lede col">A search engine can only show what a page says. Each of these is one page, written once by whoever maintains your site. Each one, the day it goes up, is the only Gorge result for that search.</p>
+    <div class="fixes">
+      <article class="fix"><h3>All-options referral, in those words</h3><p>"We provide pregnancy testing and all-options counseling, and we refer for abortion care." Name where you refer, what you do here before and after, and how a Washington resident becomes your patient. Title X clinics already must offer this at the counter.</p></article>
+      <article class="fix"><h3>Free pregnancy tests</h3><p>If you offer them, a page that says "free pregnancy test" with your town's name. Today that search in Goldendale or The Dalles returns the centers.</p></article>
+      <article class="fix"><h3>Early pregnancy appointments, before 14 weeks</h3><p>Dating, options and a plan, while every option is still open. A page that offers that visit, and says so, meets the patient where the centers meet her: at "I just found out."</p></article>
+      <article class="fix"><h3>Emergency contraception and miscarriage care</h3><p>Each with its own page and the plain phrase in the title. Klickitat County's page ranks first for "emergency contraception goldendale" because it says "available same day."</p></article>
+      <article class="fix"><h3>In Spanish</h3><p>The centers did it. A Spanish speaker in the Gorge today is routed to them or to Bend.</p></article>
+      <article class="fix"><h3>Name the Washington towns</h3><p>Google cannot connect "Stevenson," "Bingen" or "White Salmon" to health care unless a page does it.</p></article>
+      <article class="fix"><h3>Fix your listings, and name an owner</h3><p>Read your 211info, Google Business Profile and WebMD entries as a patient would. Correct them, and name one person to check them each quarter. Pages drift.</p></article>
+    </div>
+    <div class="fair">
+      <p><b>If one paragraph is all a clinic will post, this is the paragraph,</b> and it works whether or not you provide abortion:</p>
+      <p><i>"We do not provide medication or procedural abortion at this site. Our clinicians offer all-options counseling and will refer you. For abortion appointments in Oregon or Washington, use these direct links. Ask our staff for help with insurance, interpretation or travel."</i></p>
+      <p>Public agencies here already do this. North Central Public Health District's page says a pregnant client can "talk with the nurse about all pregnancy choices," including abortion. Hood River County's lists "all options counseling &amp; referrals." Both state health departments publish provider lists and warn, by name, about pregnancy resource centers. The pages have stayed up.</p>
+    </div>
+  </section>
+
+  <section id="money">
+    <p class="eyebrow">THE FUNDED FIXES</p>
+    <h2>The rural health money is here, and the next budget is being written.</h2>
+    <p class="lede col">Washington's first-year Rural Health Transformation award is fully committed as of November 5, 2026. Two of its lines reached the Gorge. Year two is $177 million, and the state's budget for it is expected by the end of December.</p>
+
+    <div class="two">
+      <figure id="fig-wa">
+        <div class="fig-title">Washington's $181M, year one, by initiative</div>
+        <div class="fig-sub">Estimated amounts, HCA, Nov. 5, 2026.</div>
+        <div class="chart" id="chart-wa" data-h="320"></div>
+      </figure>
+      <figure id="fig-hosp">
+        <div class="fig-title">Inside the $59M hospital initiative</div>
+        <div class="fig-sub">The maternal line went to 28 hospitals by competitive bid. Skyline Health is one of them.</div>
+        <div class="chart" id="chart-hosp" data-h="240"></div>
+      </figure>
+    </div>
+    <figcaption style="margin-top:12px">Source: HCA, "Washington's RHT funds are 100% obligated," Nov. 5, 2026. What Skyline's maternal-emergency-specialty award funds, and how much it is, has not been published. Skyline and Klickitat Valley Health were also among 45 providers approved for technology ($17.02M). Workforce incentives ($9.89M) name "maternity care providers (including midwives and doulas)" as a key role; HCA said DOH would open that opportunity in November; on Nov. 20, DOH listed none open.</figcaption>
+
+    <figure id="fig-gorge">
+      <div class="fig-title">What reached the Gorge, both states</div>
+      <div class="tbl"><table>
+        <thead><tr><th>Who</th><th>Award</th><th>What is known</th></tr></thead>
+        <tbody>
+          <tr><td>Skyline Health <span class="ax">WA</span></td><td>Maternal, emergency and specialty services (1 of 28) · Provider technology (1 of 45)</td><td>Purpose and amount of the maternal-line award not published. The district can say so at a public meeting.</td></tr>
+          <tr><td>Klickitat Valley Health <span class="ax">WA</span></td><td>Provider technology (1 of 45)</td><td>Not on the maternal-services list.</td></tr>
+          <tr><td>One Community Health <span class="ax">OR</span></td><td class="num">$1,013,155 + $1,677,810 over two years</td><td>Two Catalyst awards, "Healthy Communities &amp; Prevention," Hood River and Wasco counties. Project content is in OHA's dashboard, not its table.</td></tr>
+          <tr><td>Providence Hood River <span class="ax">OR</span></td><td class="num">$2,294,245, year one</td><td>Catalyst award, "Healthy Communities &amp; Prevention." Content not in the table.</td></tr>
+        </tbody></table></div>
+      <figcaption>Oregon: $197.3M in year one and $197.25M in year two; competitive Catalyst grants, with "maternal and child health" the first population of focus on OHA's list. Oregon also funded a mobile obstetrics simulation unit ($610,000), a 24/7 obstetric addiction advice line ($398,000) and nurse home visiting for new families ($631,000). The Catalyst round closed in May 2026 with 583 proposals asking for more than $830M against $160M; a second phase of "sustained and competitive" awards has no date. Sources: OHA RHTP awards page and award data, read Nov. 20, 2026; CMS year-two awards, Nov. 9, 2026.</figcaption>
+    </figure>
+  </section>
+
+  <section id="asks">
+    <p class="eyebrow">THE ASKS</p>
+    <h2>Who, what, and by when.</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Who</th><th>By when</th><th>What</th></tr></thead>
+      <tbody>
+        <tr><td>Every Gorge clinic and health department</td><td class="when">30 days</td><td>Post the referral paragraph and the service pages (fixes 1, 2, 4, 7). Correct your 211info and Google listings. Name the person who checks them each quarter.</td></tr>
+        <tr><td>Every Gorge clinic</td><td class="when">60 days</td><td>Spanish versions; early pregnancy appointment page; Washington town names on the page (fixes 3, 5, 6).</td></tr>
+        <tr><td>Skyline Health and Klickitat Valley Health</td><td class="when">Next board meeting</td><td>Say in public what the 2026 awards fund. Apply in the 2027 period for the outpatient basics: a visiting OB/GYN or nurse-midwife clinic, prenatal and postpartum care, early pregnancy loss care, and the referral pathway. Workforce incentives are $15,000 to $100,000 per clinician.</td></tr>
+        <tr><td>Washington Health Care Authority</td><td class="when">December 2026</td><td>Add a second metric to the maternal line. Today's goal is to "ensure no additional rural hospitals close their obstetric units," measured by holding the baseline of 25 rural hospitals with no labor and delivery. For a county that already lost its unit, that rewards zero. "Outpatient prenatal, postpartum and gynecologic care available in every rural county" makes a Gorge proposal fundable on the state's own terms. Our written comment is ready to file.</td></tr>
+        <tr><td>Skamania and Klickitat Boards of Health</td><td class="when">Next plan update</td><td>Put reproductive and maternity care into the health assessment and improvement plan. Neither names it; Skamania's dropped "Access to Health Care." Funding requests are built on these plans.</td></tr>
+        <tr><td>One Community Health and Providence Hood River</td><td class="when">90 days</td><td>You hold Oregon's money now. The referral pathway, the Spanish pages and the directory corrections fit inside a prevention project. Publish how a Washington resident becomes a patient.</td></tr>
+      </tbody></table></div>
+    <p class="lede col" style="margin-top:28px">Gorge Access will share the full search capture set with any provider, help draft page language, file our comment on Washington's year-two budget in December, and repeat the search audit in six months to report, by institution, what moved.</p>
+  </section>
+
+  <div class="method" id="method">
+    <p><b>Method and sources.</b> Searches: google.com, Oct. 28, 2026, clean browser, no account, personalization off; six towns × six phrases plus six "near me" map boxes; every first-page result coded by site type; the browser's IP geolocated to Southern California, so town-name searches (which do not depend on location) carry the findings. Full data, coding rules and the written report are available from Gorge Access. Center quotes: the two centers' own pages, read Oct. 28, 2026. Clinical sources: FDA mifepristone REMS (Jan. 2023; updated Apr. 2026); Upadhyay et al., <i>Nature Medicine</i> 2024; ACOG statement on "abortion reversal"; Creinin et al., <i>Obstetrics &amp; Gynecology</i> 2020; AAFP 2022 summary of ACOG Practice Bulletin 225; Schreiber et al., <i>NEJM</i> 2018; Dodge et al., <i>Obstetrics &amp; Gynecology</i> 2018 (the audit method we follow). Funding: HCA "Washington's RHT funds are 100% obligated," Nov. 5, 2026; HCA RHT project narrative v.3; CMS second-year awards, Nov. 9, 2026; KFF Policy Watch, Nov. 13, 2026; OHA RHTP program and awards pages and RHTP-Awards-Data.xlsx, read Nov. 20, 2026; Washington State Standard, Nov. 20, 2026. 211info entries read Oct. 28, 2026.</p>
+    <p>Gorge Access · hello@gorgeaccess.org · gorgeaccess.org</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  function el(tag,attrs,parent,text){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;if(parent)parent.appendChild(e);return e}
+  function svgFor(node){node.innerHTML="";const w=Math.max(280,node.clientWidth||600),h=+node.dataset.h||260;const s=el("svg",{viewBox:`0 0 ${w} ${h}`,role:"img"},node);return {s,w,h}}
+  function tip(e,t){el("title",{},e,t)}
+  const fmtM=v=>"$"+v.toFixed(v<10?2:1).replace(/\.?0+$/,"")+"M";
+
+  const G={"towns": ["The Dalles", "Hood River", "White Salmon", "Bingen", "Stevenson", "Goldendale"], "phr": ["abortion", "abortion clinic", "abortion pill", "pregnancy test", "emergency contraception", "aborto (Spanish)"], "grid": [[{"c": "pc", "raw": "PREG", "pc": 6, "g": 8}, {"c": "pc", "raw": "PREG", "pc": 5, "g": 7}, {"c": "pc", "raw": "PREG", "pc": 4, "g": 5}, {"c": "pc", "raw": "PREG", "pc": 4, "g": 5}, {"c": "local", "raw": "LOCA", "pc": 1, "g": 3}, {"c": "other", "raw": "NEWS", "pc": 1, "g": 1}], [{"c": "pc", "raw": "PREG", "pc": 1, "g": 3}, {"c": "prov", "raw": "PROV", "pc": 1, "g": 4}, {"c": "prov", "raw": "PROV", "pc": 2, "g": 2}, {"c": "other", "raw": "RETA", "pc": 3, "g": 5}, {"c": "pc", "raw": "PREG", "pc": 1, "g": 5}, {"c": "pc", "raw": "PREG", "pc": 3, "g": 4}], [{"c": "other", "raw": "NEWS", "pc": 2, "g": 2}, {"c": "other", "raw": "INFO", "pc": 2, "g": 4}, {"c": "other", "raw": "INFO", "pc": 0, "g": 1}, {"c": "other", "raw": "OTHE", "pc": 0, "g": 0}, {"c": "other", "raw": "INFO", "pc": 0, "g": 0}, {"c": "other", "raw": "OTHE", "pc": 0, "g": 2}], [{"c": "other", "raw": "OTHE", "pc": 0, "g": 0}, {"c": "prov", "raw": "PROV", "pc": 0, "g": 0}, {"c": "other", "raw": "INFO", "pc": 0, "g": 0}, {"c": "other", "raw": "INFO", "pc": 1, "g": 1}, {"c": "other", "raw": "INFO", "pc": 0, "g": 0}, {"c": "other", "raw": "INFO", "pc": 2, "g": 2}], [{"c": "other", "raw": "OTHE", "pc": 0, "g": 0}, {"c": "pc", "raw": "PREG", "pc": 1, "g": 1}, {"c": "prov", "raw": "PROV", "pc": 0, "g": 0}, {"c": "other", "raw": "RETA", "pc": 0, "g": 0}, {"c": "other", "raw": "INFO", "pc": 0, "g": 0}, {"c": "other", "raw": "NEWS", "pc": 0, "g": 0}], [{"c": "pc", "raw": "PREG", "pc": 4, "g": 6}, {"c": "prov", "raw": "PROV", "pc": 0, "g": 1}, {"c": "prov", "raw": "PROV", "pc": 3, "g": 5}, {"c": "pc", "raw": "PREG", "pc": 5, "g": 7}, {"c": "local", "raw": "LOCA", "pc": 1, "g": 4}, {"c": "prov", "raw": "PROV", "pc": 3, "g": 4}]]};
+  const counts=[["Anti-abortion center is the first result",10,"lead"],["Anti-abortion center on page one",22,"lead"],["Oregon/Washington abortion provider on page one",15,"bar2"],["A Gorge clinic's page on page one, none naming abortion",14,"bar"],["Nothing from the Gorge at all",11,"track"]];
+  const wa=[["Rural hospitals",59.24,"bar"],["Rural workforce",33.47,"bar"],["Technology and data",23.76,"bar"],["Behavioral health",21.92,"bar"],["Community care and prevention",19.49,"bar"],["29 Tribes",19.41,"bar"]];
+  const hosp=[["WSHA: hospital technology",41.99,"bar"],["Maternal, emergency, specialty: 28 hospitals",9.67,"lead"],["Rural Collaborative: 30 hospitals",5.43,"bar"],["Payment model redesign",2.14,"bar"]];
+
+  function drawGrid(){const n=document.getElementById("chart-grid");const {s,w,h}=svgFor(n);const narrow=w<620;const lw=narrow?80:150;const th=narrow?44:48;const cols=G.phr.length,rows=G.towns.length;const gap=4;
+    const cw=(w-lw-gap*(cols-1))/cols;const ch=(h-th-gap*(rows-1))/rows;
+    const key=document.getElementById("grid-key");key.textContent=narrow?"Searches: "+G.phr.map((p,j)=>(j+1)+" "+p).join(" · "):"";
+    G.phr.forEach((p,j)=>{const x=lw+j*(cw+gap)+cw/2;const words=narrow?[String(j+1)]:p.split(" ");const t=el("text",{x,y:words.length>1?th-28:th-12,"text-anchor":"middle",class:narrow?"lab":"ax"},s);
+      words.forEach((wd,k)=>{el("tspan",{x,dy:k?14:0},t,wd)})});
+    const letter={pc:"A",prov:"P",local:"G",other:"·"};const fill={pc:"var(--lead)",prov:"var(--bar2)",local:"var(--bar)",other:"var(--track)"};
+    G.towns.forEach((t,i)=>{const y=th+i*(ch+gap);el("text",{x:lw-10,y:y+ch/2+5,"text-anchor":"end",class:"lab"},s,t);
+      G.grid[i].forEach((c,j)=>{const x=lw+j*(cw+gap);const r=el("rect",{x,y,width:cw,height:ch,rx:3,fill:fill[c.c]},s);
+        const names={pc:"anti-abortion pregnancy center",prov:"Oregon/Washington abortion provider",local:"Gorge clinic or Gorge Access",other:"directory, news, retail or unrelated"};
+        tip(r,`"${G.phr[j].replace(" (Spanish)","")} ${t.toLowerCase()}": first result was a ${names[c.c]}; ${c.pc} anti-abortion center page(s) on page one; ${c.g} result(s) from the Gorge`);
+        const dark=c.c!=="other";el("text",{x:x+8,y:y+ch/2+6,class:"cell-lab",fill:dark?"var(--bg)":"var(--muted)","font-size":17},s,letter[c.c]);
+        if(c.pc>0)el("text",{x:x+cw-7,y:y+ch-7,"text-anchor":"end",class:"cell-lab",fill:dark?"var(--bg)":"var(--muted)"},s,String(c.pc));
+      })});
+  }
+
+  function hbars(node,data,o){const {s,w,h}=svgFor(node);const narrow=w<720;const lw=narrow?0:Math.min(320,w*.46);const rowH=(h-8)/data.length;const max=o.max;const vw=w-lw-70;
+    data.forEach((d,i)=>{const y0=4+i*rowH;const ly=narrow?y0+14:y0+rowH/2+5;
+      const t=el("text",{x:0,y:ly,class:"lab"},s,d[0]);if(!narrow){t.setAttribute("x",lw-10);t.setAttribute("text-anchor","end")}
+      const by=narrow?y0+20:y0+rowH*.2;const bh=narrow?rowH-28:rowH*.6;const bx=narrow?0:lw;const bwid=Math.max(2,(d[1]/max)*(narrow?w-70:vw));
+      el("rect",{x:bx,y:by,width:narrow?w-70:vw,height:bh,rx:2,fill:"var(--track)",opacity:.5},s);
+      const r=el("rect",{x:bx,y:by,width:bwid,height:bh,rx:2,fill:`var(--${d[2]})`,class:"grow",stroke:d[2]==="track"?"var(--rule)":"none"},s);tip(r,d[0]+": "+(o.vf?o.vf(d[1]):d[1]));
+      el("text",{x:bx+bwid+8,y:by+bh/2+5,class:d[2]==="lead"?"lab-lead":"lab"},s,o.vf?o.vf(d[1]):String(d[1]));});
+  }
+
+  function drawTime(){const n=document.getElementById("chart-time");const {s,w,h}=svgFor(n);const narrow=w<560;const lw=narrow?0:120;const m={l:lw,r:16};const iw=w-m.l-m.r;const days=7;const x=d=>m.l+(d/days)*iw;
+    const rows=[{y:narrow?26:40,name:"Telehealth",segs:[[0,0.1,"bar2","Same-day intake"],[0.1,3,"bar","Pills arrive, 1 to 3 business days"]],end:"Done by Wednesday"},
+                {y:narrow?124:120,name:"The center's path",segs:[[0,4,"track","Fri. afternoon to Tue. morning: office closed"],[4,4.1,"lead","Consultation: paperwork, test, no referral"],[4.1,7,"track","Ultrasound results by phone, days later"]],end:"Back at the search bar"}];
+    const bh=narrow?30:36;
+    for(let d=0;d<=days;d++){el("line",{x1:x(d),x2:x(d),y1:narrow?44:28,y2:h-26,class:"grid"},s);el("text",{x:x(d),y:h-8,"text-anchor":"middle",class:"ax"},s,["Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri"][d])}
+    rows.forEach(r=>{const ly=narrow?r.y-10:r.y+bh/2+5;const t=el("text",{x:narrow?0:lw-10,y:ly,class:"lab","text-anchor":narrow?"start":"end"},s,r.name);
+      r.segs.forEach(([a,b,c,nm])=>{const rc=el("rect",{x:x(a)+1,y:r.y,width:Math.max(3,x(b)-x(a)-2),height:bh,rx:2,fill:`var(--${c})`,stroke:c==="track"?"var(--rule)":"none",class:"grow"},s);tip(rc,nm)});
+      const last=r.segs[r.segs.length-1];if(narrow)el("text",{x:w,y:r.y-10,"text-anchor":"end",class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);else el("text",{x:Math.min(x(last[1])+8,w-150),y:r.y+bh/2+5,class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);
+    });
+    const fy=rows[1].y+bh+6;const nt=el("text",{x:m.l,y:fy+16,class:"ax"},s);if(narrow){el("tspan",{x:m.l,dy:0},nt,"Funding help needs 48 hours' notice.");el("tspan",{x:m.l,dy:15},nt,"The window closes while the patient waits.")}else nt.textContent="Funding help needs 48 hours' notice. The window closes while the patient waits.";
+  }
+
+  function drawAll(){drawGrid();hbars(document.getElementById("chart-counts"),counts,{max:36,vf:v=>v+" of 36"});hbars(document.getElementById("chart-wa"),wa,{max:60,vf:fmtM});hbars(document.getElementById("chart-hosp"),hosp,{max:60,vf:fmtM});drawTime();}
+  drawAll();let t;addEventListener("resize",()=>{clearTimeout(t);t=setTimeout(drawAll,150)});
+})();
+</script>
+</body>
+</html>
