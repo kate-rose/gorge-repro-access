@@ -322,7 +322,7 @@ td:first-child{font-family:var(--serif);font-weight:700;font-size:16px;line-heig
     for(let d=0;d<=days;d++){el("line",{x1:x(d),x2:x(d),y1:narrow?44:28,y2:h-26,class:"grid"},s);el("text",{x:x(d),y:h-8,"text-anchor":"middle",class:"ax"},s,["Fri","Sat","Sun","Mon","Tue","Wed","Thu","Fri"][d])}
     rows.forEach(r=>{const ly=narrow?r.y-10:r.y+bh/2+5;const t=el("text",{x:narrow?0:lw-10,y:ly,class:"lab","text-anchor":narrow?"start":"end"},s,r.name);
       r.segs.forEach(([a,b,c,nm])=>{const rc=el("rect",{x:x(a)+1,y:r.y,width:Math.max(3,x(b)-x(a)-2),height:bh,rx:2,fill:`var(--${c})`,stroke:c==="track"?"var(--rule)":"none",class:"grow"},s);tip(rc,nm)});
-      const last=r.segs[r.segs.length-1];if(narrow)el("text",{x:w,y:r.y-10,"text-anchor":"end",class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);else el("text",{x:Math.min(x(last[1])+8,w-150),y:r.y+bh/2+5,class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);
+      const last=r.segs[r.segs.length-1];if(narrow)el("text",{x:w,y:r.y-10,"text-anchor":"end",class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);else el("text",{x:Math.min(x(last[1])+8,w-175),y:r.y+bh/2+5,class:r.name==="Telehealth"?"lab":"lab-lead"},s,r.end);
     });
     const fy=rows[1].y+bh+6;const nt=el("text",{x:m.l,y:fy+16,class:"ax"},s);if(narrow){el("tspan",{x:m.l,dy:0},nt,"Funding help needs 48 hours' notice.");el("tspan",{x:m.l,dy:15},nt,"The window closes while the patient waits.")}else nt.textContent="Funding help needs 48 hours' notice. The window closes while the patient waits.";
   }
