@@ -5,102 +5,93 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Abortion Is Too Hard to Find From the Gorge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Bitter:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<meta name="color-scheme" content="light">
 <style>
-/* Same kit as the Skamania at the Bone briefing: one reading column, charts and card grids widen to 940px. */
+/* Styled to match gorgeaccess.org (Squarespace): cream page, navy ink, coral accent, Shrikhand headings, Bitter body. Light only, so it sits inside the site in an iframe. */
 :root{
-  --bg:#EEF1EC; --panel:#DDE4DD; --ink:#132A31; --muted:#4E6268;
-  --lead:#C46A12; --bar:#6F8F86; --bar2:#3E615A; --track:#C9D3CC; --rule:#B9C6BE;
-  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
-  --serif:"Source Serif 4",Georgia,serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#122A33; --panel:#1B3843; --ink:#EAF0EE; --muted:#9DB3B3;
-    --lead:#F2B14C; --bar:#6E978C; --bar2:#A9C9BF; --track:#244652; --rule:#2E5260; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#122A33; --panel:#1B3843; --ink:#EAF0EE; --muted:#9DB3B3;
-  --lead:#F2B14C; --bar:#6E978C; --bar2:#A9C9BF; --track:#244652; --rule:#2E5260; color-scheme:dark;
+  --bg:#FDF0E6; --panel:#FFFFFF; --ink:#0B0D63; --muted:#4A4C7A;
+  --lead:#F08E80; --lead-text:#B8422F; --bar:#7B80C4; --bar2:#0B0D63; --track:#F3DBCD; --rule:#E6C9B8;
+  --display:"Shrikhand","Georgia",serif;
+  --serif:"Bitter",Georgia,serif;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.55;
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
 .wrap{max-width:940px;margin:0 auto}
 .col{max-width:680px}
-h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;text-wrap:balance;margin:0}
-h1{font-size:clamp(48px,9vw,96px);letter-spacing:-.5px}
-h2{font-size:clamp(36px,6vw,56px);margin-top:8px}
-h3{font-size:28px;font-weight:700;line-height:1.05}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:0;color:var(--ink)}
+h1{font-size:clamp(36px,6.5vw,64px)}
+h2{font-size:clamp(28px,4.4vw,40px);margin-top:8px}
+h3{font-size:24px;line-height:1.15}
 p{margin:0}
 .stack>*+*{margin-top:16px}
-a{color:inherit;text-decoration-color:var(--lead);text-underline-offset:3px}
+a{color:var(--lead-text);text-decoration-color:var(--lead);text-underline-offset:3px}
 .num{font-variant-numeric:tabular-nums}
 .mast{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;border-bottom:1px solid var(--rule);padding-block:20px 12px;font-size:15px;color:var(--muted)}
 .mast b{color:var(--ink);font-weight:600}
 .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 56px;padding-block:40px 32px;align-items:end}
 .hero>div{container-type:inline-size}
 .hero .for{font-size:20px;color:var(--muted);margin-top:16px;max-width:34ch}
-.stat{font-family:var(--display);font-weight:700;font-size:min(200px,26cqi);line-height:.85;color:var(--lead);font-variant-numeric:tabular-nums}
+.stat{font-family:var(--display);font-weight:400;font-size:min(190px,26cqi);line-height:.9;color:var(--lead);font-variant-numeric:tabular-nums}
 .stat-cap{font-size:20px;margin-top:12px;max-width:40ch}
 @media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
-.minute{background:var(--panel);padding:24px 28px;margin-block:8px 0}
+.minute{background:var(--panel);border-radius:6px;padding:24px 28px;margin-block:8px 0}
 .minute h3{margin-bottom:12px}
 .minute ol{margin:0;padding-left:22px}
 .minute li+li{margin-top:10px}
 section{padding-top:64px}
-.eyebrow{font-family:var(--display);font-weight:600;font-size:18px;color:var(--muted);letter-spacing:.6px}
+.eyebrow{font-family:var(--serif);font-weight:700;font-size:14px;color:var(--lead-text);letter-spacing:1.2px;text-transform:uppercase}
 .lede{font-size:20px;margin-top:16px}
 figure{margin:32px 0 0}
-figure .fig-title{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05}
+figure .fig-title{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.15;color:var(--ink)}
 figure .fig-sub{color:var(--muted);font-size:16px;margin-top:4px;max-width:68ch}
 .chart{margin-top:12px;width:100%;min-height:120px}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
 figcaption{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px;margin-top:10px;max-width:80ch}
-.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--display);font-weight:600;font-size:16px;margin-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--serif);font-weight:600;font-size:14px;margin-top:10px}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{width:14px;height:14px;border-radius:2px;display:inline-block}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
 @media (max-width:760px){.two{grid-template-columns:minmax(0,1fr)}}
-.ax{font-family:var(--display);font-size:14px;fill:var(--muted)}
-.lab{font-family:var(--display);font-size:15px;font-weight:600;fill:var(--ink)}
-.lab-lead{font-family:var(--display);font-size:16px;font-weight:700;fill:var(--lead)}
-.cell-lab{font-family:var(--display);font-size:13px;font-weight:700;fill:var(--bg)}
+.ax{font-family:var(--serif);font-size:12px;fill:var(--muted)}
+.lab{font-family:var(--serif);font-size:13px;font-weight:600;fill:var(--ink)}
+.lab-lead{font-family:var(--serif);font-size:13px;font-weight:700;fill:var(--lead-text)}
+.cell-lab{font-family:var(--serif);font-size:12px;font-weight:700;fill:var(--bg)}
 .grid{stroke:var(--rule);stroke-width:1}
-.bite{border-top:3px solid var(--ink);padding-top:14px;margin-top:40px;max-width:760px}
-.bite q{display:block;font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,30px);line-height:1.05;quotes:"\201C" "\201D"}
+.bite{border-top:3px solid var(--lead);padding-top:14px;margin-top:40px;max-width:760px}
+.bite q{display:block;font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(20px,2.6vw,24px);line-height:1.25;quotes:"\201C" "\201D"}
 .bite .who{font-size:16px;color:var(--muted);margin-top:10px}
 .bites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
 .bites-grid .bite{margin-top:32px}
 @media (max-width:760px){.bites-grid{grid-template-columns:minmax(0,1fr)}}
-.fair{border:1px solid var(--rule);padding:22px 26px;margin-top:32px}
+.fair{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:22px 26px;margin-top:32px}
 .fair p+p{margin-top:10px}
 .fixes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px;counter-reset:fix}
 @media (max-width:760px){.fixes{grid-template-columns:minmax(0,1fr)}}
-.fix{background:var(--panel);padding:20px 22px;min-width:0;position:relative}
-.fix h3{font-size:24px;margin-bottom:8px;padding-left:44px}
-.fix h3::before{counter-increment:fix;content:counter(fix);position:absolute;left:22px;top:18px;font-family:var(--display);font-weight:800;font-size:30px;color:var(--lead);line-height:1}
+.fix{background:var(--panel);border-radius:6px;padding:20px 22px;min-width:0;position:relative}
+.fix h3{font-size:20px;margin-bottom:8px;padding-left:44px}
+.fix h3::before{counter-increment:fix;content:counter(fix);position:absolute;left:22px;top:18px;font-family:var(--display);font-weight:400;font-size:28px;color:var(--lead);line-height:1}
 .fix p{font-size:16px}
 .harms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
 @media (max-width:760px){.harms{grid-template-columns:minmax(0,1fr)}}
 .harm{border-top:3px solid var(--lead);padding-top:12px;min-width:0}
-.harm h3{font-size:24px;margin-bottom:6px}
+.harm h3{font-size:20px;margin-bottom:6px}
 .harm p{font-size:16px}
 .tbl{overflow-x:auto;margin-top:24px}
 table{border-collapse:collapse;width:100%;font-size:16px}
-th{font-family:var(--display);font-weight:700;font-size:16px;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:8px 10px 6px 0}
+th{font-family:var(--serif);font-weight:700;font-size:14px;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:8px 10px 6px 0}
 td{border-bottom:1px solid var(--rule);padding:10px 10px 10px 0;vertical-align:top}
-td:first-child{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.1;width:26%}
-.when{font-family:var(--display);font-weight:700;font-size:19px;white-space:nowrap}
-@media (max-width:620px){thead{display:none}tbody tr{display:block;border-bottom:1px solid var(--rule);padding:12px 0}tbody td{display:block;border:0;padding:2px 0;width:auto}td:first-child{width:auto}.when{display:inline-block;color:var(--lead);margin-bottom:4px}}
+td:first-child{font-family:var(--serif);font-weight:700;font-size:16px;line-height:1.2;width:26%}
+.when{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--lead-text);white-space:nowrap}
+@media (max-width:620px){thead{display:none}tbody tr{display:block;border-bottom:1px solid var(--rule);padding:12px 0}tbody td{display:block;border:0;padding:2px 0;width:auto}td:first-child{width:auto}.when{display:inline-block;margin-bottom:4px}}
 .method{font-size:15px;color:var(--muted);border-top:1px solid var(--rule);margin-top:64px;padding-top:16px}
 .method p+p{margin-top:8px}
 @media (prefers-reduced-motion:no-preference){.grow{transform-box:fill-box;transform-origin:left;animation:grow 1.1s ease-out both}@keyframes grow{from{transform:scaleX(.001)}}}
 .print-only{display:none}
 @page{size:letter;margin:0.55in 0.6in}
 @media print{
-  :root,:root[data-theme="dark"]{--bg:#FFFFFF;--panel:#EEF1EC;--ink:#132A31;--muted:#4E6268;--lead:#C46A12;--bar:#6F8F86;--bar2:#3E615A;--track:#DDE4DD;--rule:#B9C6BE;color-scheme:light}
+  :root{--bg:#FFFFFF;--panel:#FDF0E6}
   body{font-size:11pt;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .grow{animation:none!important}
   .hero{padding-block:16px 12px}
@@ -201,9 +192,9 @@ td:first-child{font-family:var(--display);font-weight:700;font-size:19px;line-he
     <p class="lede col" style="margin-top:8px">The Gorge centers' pages do not promise to rule out an ectopic pregnancy; they offer the ultrasound as the first step. In other states, that first step has been the last one before an emergency.</p>
     <div class="bites-grid">
       <div class="bite"><q>If I trusted those people instead of getting a second opinion, I could have died.</q><p class="who">Codyone Cameron, Wisconsin, 2026. Pregnant and in pain, she went to Life's Connection near Milwaukee, an affiliate of Heartbeat International, for a free ultrasound, and told staff she had had an ectopic pregnancy before. She was told this one was normal. Ten days later a clinic found it was ectopic; emergency surgery took both fallopian tubes. The Center for Reproductive Rights has asked Wisconsin's attorney general to investigate centers statewide (<a href="https://reproductiverights.org/news/wisconsin-woman-anti-abortion-centers/">Center for Reproductive Rights, Nov. 19, 2026</a>; <a href="https://www.usatoday.com/story/life/health-wellness/womens-health/2026/11/19/crisis-pregnancy-center-misdiagnosis/92616584007/">USA Today</a>).</p></div>
-      <div class="bite"><p class="plain" style="font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,30px);line-height:1.05">A Massachusetts woman's paperwork said "viable, in-utero pregnancy." A month later her fallopian tube ruptured.</p><p class="who">Clearway Clinic, Worcester, 2023. She found the center by searching online for a nearby ultrasound. A class-action lawsuit alleges the nurse who scanned her was not qualified to diagnose an ectopic pregnancy and that staff followed up urging her to keep the pregnancy (<a href="https://www.nbcnews.com/health/womens-health/crisis-pregnancy-center-ectopic-pregnancy-lawsuit-rcna91660">NBC News, June 28, 2023</a>).</p></div>
+      <div class="bite"><p class="plain" style="font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(20px,2.6vw,24px);line-height:1.25">A Massachusetts woman's paperwork said "viable, in-utero pregnancy." A month later her fallopian tube ruptured.</p><p class="who">Clearway Clinic, Worcester, 2023. She found the center by searching online for a nearby ultrasound. A class-action lawsuit alleges the nurse who scanned her was not qualified to diagnose an ectopic pregnancy and that staff followed up urging her to keep the pregnancy (<a href="https://www.nbcnews.com/health/womens-health/crisis-pregnancy-center-ectopic-pregnancy-lawsuit-rcna91660">NBC News, June 28, 2023</a>).</p></div>
       <div class="bite"><q>It is near impossible to rule out an ectopic.</q><p class="who">Anne O'Connor, the lawyer for NIFLA, a national membership organization of these centers, telling them not to advertise that they can. A watchdog found 100 centers in 49 states doing it anyway and asked New York's attorney general to investigate; the diagnosis takes repeated blood tests and often repeated ultrasounds, which the centers cannot provide (<a href="https://www.npr.org/2026/06/24/nx-s1-5860744/crisis-pregnancy-centers-ectopic-abortion">NPR, June 24, 2026</a>).</p></div>
-      <div class="bite"><p class="plain" style="font-family:var(--display);font-weight:700;font-size:clamp(24px,3.2vw,30px);line-height:1.05">Fewer than 40% of these centers' staff were licensed medical professionals, by the movement's own 2019 count.</p><p class="who">Charlotte Lozier Institute figure, as reported by NBC News. The Gorge centers do not name a medical director on their sites. Hope's homepage said on Oct. 28 that its medical services were paused.</p></div>
+      <div class="bite"><p class="plain" style="font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(20px,2.6vw,24px);line-height:1.25">Fewer than 40% of these centers' staff were licensed medical professionals, by the movement's own 2019 count.</p><p class="who">Charlotte Lozier Institute figure, as reported by NBC News. The Gorge centers do not name a medical director on their sites. Hope's homepage said on Oct. 28 that its medical services were paused.</p></div>
     </div>
 
     <div class="fair">
@@ -307,11 +298,11 @@ td:first-child{font-family:var(--display);font-weight:700;font-size:19px;line-he
       words.forEach((wd,k)=>{el("tspan",{x,dy:k?14:0},t,wd)})});
     const letter={pc:"A",prov:"P",local:"G",other:"·"};const fill={pc:"var(--lead)",prov:"var(--bar2)",local:"var(--bar)",other:"var(--track)"};
     G.towns.forEach((t,i)=>{const y=th+i*(ch+gap);el("text",{x:lw-10,y:y+ch/2+5,"text-anchor":"end",class:"lab"},s,t);
-      G.grid[i].forEach((c,j)=>{const x=lw+j*(cw+gap);const r=el("rect",{x,y,width:cw,height:ch,rx:3,fill:fill[c.c]},s);
+      G.grid[i].forEach((c,j)=>{const x=lw+j*(cw+gap);const r=el("rect",{x,y,width:cw,height:ch,rx:3,fill:fill[c.c],stroke:c.c==="other"?"var(--rule)":"none"},s);
         const names={pc:"anti-abortion pregnancy center",prov:"Oregon/Washington abortion provider",local:"Gorge clinic or Gorge Access",other:"directory, news, retail or unrelated"};
         tip(r,`"${G.phr[j].replace(" (Spanish)","")} ${t.toLowerCase()}": first result was a ${names[c.c]}; ${c.pc} anti-abortion center page(s) on page one; ${c.g} result(s) from the Gorge`);
-        const dark=c.c!=="other";el("text",{x:x+8,y:y+ch/2+6,class:"cell-lab",fill:dark?"var(--bg)":"var(--muted)","font-size":17},s,letter[c.c]);
-        if(c.pc>0)el("text",{x:x+cw-7,y:y+ch-7,"text-anchor":"end",class:"cell-lab",fill:dark?"var(--bg)":"var(--muted)"},s,String(c.pc));
+        const onNavy=c.c==="prov";const dark=c.c!=="other";el("text",{x:x+8,y:y+ch/2+6,class:"cell-lab",fill:onNavy?"var(--bg)":(dark?"var(--ink)":"var(--muted)"),"font-size":17},s,letter[c.c]);
+        if(c.pc>0)el("text",{x:x+cw-7,y:y+ch-7,"text-anchor":"end",class:"cell-lab",fill:onNavy?"var(--bg)":(dark?"var(--ink)":"var(--muted)")},s,String(c.pc));
       })});
   }
 
@@ -338,6 +329,9 @@ td:first-child{font-family:var(--display);font-weight:700;font-size:19px;line-he
 
   function drawAll(){drawGrid();hbars(document.getElementById("chart-counts"),counts,{max:36,vf:v=>v+" of 36"});hbars(document.getElementById("chart-wa"),wa,{max:60,vf:fmtM});hbars(document.getElementById("chart-hosp"),hosp,{max:60,vf:fmtM});drawTime();}
   drawAll();let t;addEventListener("resize",()=>{clearTimeout(t);t=setTimeout(drawAll,150)});
+  // When embedded in an iframe on gorgeaccess.org, report the page height so the frame can size itself.
+  function postH(){if(window.parent!==window)parent.postMessage({gorgeAccessMemoHeight:document.documentElement.scrollHeight},"*")}
+  postH();addEventListener("load",postH);addEventListener("resize",postH);new ResizeObserver(postH).observe(document.body);
 })();
 </script>
 </body>
